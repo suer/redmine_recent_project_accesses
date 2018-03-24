@@ -1,11 +1,7 @@
 require 'projects_controller_hook.rb'
 require 'recent_project_acccesses_listener'
 
-Rails.configuration.to_prepare do
-  unless ProjectsController.included_modules.include? RecentProjectAccesses::ProjectsControllerHook
-    ProjectsController.send(:include, RecentProjectAccesses::ProjectsControllerHook)
-  end
-end
+ProjectsController.prepend(RecentProjectAccesses::ProjectsControllerWithSaveRecentProjectAccess)
 
 Redmine::Plugin.register :redmine_recent_project_accesses do
   name 'Redmine Recent Project Accesses plugin'
