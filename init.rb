@@ -7,7 +7,7 @@ Redmine::Plugin.register :redmine_recent_project_accesses do
   name 'Redmine Recent Project Accesses plugin'
   author 'suer'
   description 'shows projects in the order of accessing'
-  version '0.0.1'
+  version '0.0.2'
   url 'https://github.com/suer/redmine_recent_project_accesses'
   author_url 'http://d.hatena.ne.jp/suer'
 
